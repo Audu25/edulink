@@ -35,5 +35,5 @@ jobs:
         with:
           app_id: ${{ vars.BUNNY_APP_ID }}
           api_key: ${{ secrets.BUNNYNET_API_KEY }}
-          container: Container-edulink
+          container: edulink
           image_tag: ${{ github.sha }}
