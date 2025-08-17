@@ -1,10 +1,19 @@
 # Use lightweight Python image
 FROM python:3.10-slim
 
+# Prevent Python from writing .pyc files & ensure stdout/stderr are unbuffered
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
 # Set working directory
 WORKDIR /app
 
-# Install dependencies
+# Install system deps (optional but good practice)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+# Install Python deps
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
