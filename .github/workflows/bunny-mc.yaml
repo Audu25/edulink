@@ -27,8 +27,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/tg-bot:${{ github.sha }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/tg-bot:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/edulink:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/edulink:latest
 
       - name: Update Magic Containers
         uses: BunnyWay/actions/container-update-image@main
