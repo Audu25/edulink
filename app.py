@@ -37,7 +37,7 @@ async def log_requests(request: Request, call_next):
 @app.get("/")
 def root():
     logger.info("Root endpoint accessed")
-    return {"message": "EduLink Backend is running now - Deployed via Docker & Magic Containers!"}
+    return {"message": "EduLink Backend is running now version 2 - Deployed via Docker & Magic Containers!"}
 
 @app.get("/students")
 def get_students():
